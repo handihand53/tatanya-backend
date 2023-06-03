@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.12</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.tatanya.backend</groupId>
+	<artifactId>tatanya-backend</artifactId>
+	<version>0.0.0-1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Tatanya Backend Service</name>
+	<description>Tatanya Backend Service to support API request</description>
+
+	<properties>
+		<java.version>11</java.version>
+		<!-- SPRING DEPENDENCIES -->
+		<spring-boot.version>2.7.12</spring-boot.version>
+		<spring-openapi.version>1.7.0</spring-openapi.version>
+	</properties>
+
+	<modules>
+		<module>tatanya-backend-app</module>
+		<module>tatanya-backend-command</module>
+		<module>tatanya-backend-command-impl</module>
+		<module>tatanya-backend-command-model</module>
+		<module>tatanya-backend-configuration</module>
+		<module>tatanya-backend-helper</module>
+		<module>tatanya-backend-web</module>
+		<module>tatanya-backend-web-model</module>
+	</modules>
+
+	<dependencyManagement>
+		<!-- Module Depencies-->
+		<dependencies>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-app</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-command</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-command-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-command-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-configuration</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-helper</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tatanya.backend</groupId>
+				<artifactId>tatanya-backend-web-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+		<!-- Swagger Dependencies -->
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-webflux-ui</artifactId>
+				<version>${spring-openapi.version}</version>
+			</dependency>
+		<!-- Spring Depedencies -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-webflux</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-oauth2-client</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
